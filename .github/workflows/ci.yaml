@@ -8,14 +8,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+        with:
+            ref: ${{ github.event.pull_request.head.sha }}
 
 
       - name: Report test coverage to DeepSource in a loop for 11 times
         run: |
-            # install deepsource cli
-            curl deepsource.io/cli | sh
-            for i in {1..11}
-            do
-                ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.deepsource.toml
-                sleep 1
-            done
+          # Install the CLI
+          curl https://deepsource.io/cli | sh
+          for i in {1..11}
+          do
+              ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.deepsource.toml
+              sleep 1
+          done
