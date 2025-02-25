@@ -16,9 +16,10 @@ jobs:
         run: |
           # Install the CLI
           curl https://deepsource.io/cli | sh
-          EXPORT DEEPSOURCE_DSN=https://0c74cfbcb5d34fad9569d0be544db6e5@app.deepsource.one
           for i in {1..11}
           do
               ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.deepsource.toml
               sleep 1
           done
+        env:
+          DEEPSOURCE_DSN: https://0c74cfbcb5d34fad9569d0be544db6e5@app.deepsource.one
