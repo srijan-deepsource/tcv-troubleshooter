@@ -1,7 +1,7 @@
 import os
 
 
-def foo(x):
-    exec(x)
+def foo(xy):
+    exec(xy)
 
 breakpoint()
