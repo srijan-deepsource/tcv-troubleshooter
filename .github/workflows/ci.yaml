@@ -1,0 +1,21 @@
+name: Run tests
+
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - uses: actions/checkout@v3
+
+
+      - name: Report test coverage to DeepSource in a loop for 11 times
+        run: |
+            # install deepsource cli
+            curl deepsource.io/cli | sh
+            for i in {1..11}
+            do
+                ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.deepsource.toml
+                sleep 1
+            done
