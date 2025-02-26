@@ -16,7 +16,7 @@ jobs:
         run: |
           # Install the CLI
           curl https://deepsource.io/cli | sh
-          for i in {1..11}
+          for i in {1..5}
           do
 
               # Create a random file with value for i as the content
