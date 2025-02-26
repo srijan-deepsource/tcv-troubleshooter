@@ -23,7 +23,7 @@ jobs:
               echo "some random value" $i > ./.filerandom
 
               ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.filerandom
-              sleep 1
+              sleep 10
           done
         env:
           DEEPSOURCE_DSN: https://0c74cfbcb5d34fad9569d0be544db6e5@app.deepsource.one
