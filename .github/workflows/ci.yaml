@@ -18,7 +18,11 @@ jobs:
           curl https://deepsource.io/cli | sh
           for i in {1..11}
           do
-              ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.deepsource.toml
+
+              # Create a random file with value for i as the content
+              echo $i > ./.filerandom
+
+              ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.filerandom
               sleep 1
           done
         env:
