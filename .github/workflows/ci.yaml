@@ -20,7 +20,7 @@ jobs:
           do
 
               # Create a random file with value for i as the content
-              echo "some random value" $i > ./.filerandom
+              echo "some random value -> " $i > ./.filerandom
 
               ./bin/deepsource report --analyzer test-coverage --key python --value-file ./.filerandom
               sleep 2
