@@ -26,4 +26,4 @@ jobs:
               sleep 2
           done
         env:
-          DEEPSOURCE_DSN: https://968dff5b0ad0466d9125a21828f5dbc4@app.deepsource.com
+          DEEPSOURCE_DSN: https://0c74cfbcb5d34fad9569d0be544db6e5@app.deepsource.one
